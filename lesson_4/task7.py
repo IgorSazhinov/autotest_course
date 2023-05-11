@@ -3,7 +3,17 @@
 # [1, 0, 1, 2, 0, 1, 3]  => [1, 1, 2, 1, 3, 0, 0]
 
 def move_zeros(lst):
-    # Здесь нужно написать код
+    arr = []
+    coint = 0
+    for ind, value in enumerate(lst):
+        if value != 0:
+            arr.append(value)
+        else:
+            coint = coint + 1
+    while coint > 0:
+        arr.append(0)
+        coint = coint - 1
+    lst = arr
     return lst
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
