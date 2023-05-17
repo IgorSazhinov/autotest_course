@@ -7,8 +7,17 @@
 
 
 def repeats(our_str):
-    # Здесь нужно написать код
+    arr = list(our_str)
+    new_arr = {}
+    new_str = ''
+    for ind in arr:
+        if ind in new_arr.keys():
+            new_arr[ind] = new_arr[ind] + 1
+        else:
+            new_arr[ind] = 1
+        new_str = new_str + ind + '_' + str(new_arr[ind])
     return new_str
+
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 

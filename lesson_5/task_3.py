@@ -19,8 +19,29 @@
 
 
 def everything_for_your_cat(cats_data):
-    # Здесь нужно написать код
+    our_str = ''
+    dict = {}
+    arr = []
+    if len(cats_data) == 0:
+        return our_str
+    for ind, value in enumerate(cats_data):
+        dict['name'] = value[2] + ' ' + value[3] + ': '
+        dict['cat'] = value[0] + ', ' + str(value[1])
+        arr.append(dict.copy())
+    for s_ind, s_value in enumerate(arr):
+        s = s_ind + 1
+        while s != len(arr):
+            if s_value['name'] == arr[s]['name']:
+                a = arr[s_ind]['cat']
+                b = arr[s]['cat']
+                arr[s_ind]['cat'] = str(a) + '; ' + str(b)
+                arr.pop(s)
+            else:
+                s = s + 1
+    for n_ind in arr:
+        our_str = our_str + n_ind['name'] + n_ind['cat'] + '\n'
     return our_str
+
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
